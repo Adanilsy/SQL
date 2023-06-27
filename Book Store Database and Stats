@@ -1,0 +1,42 @@
+--Create a book store database
+
+CREATE TABLE Books (id INTEGER PRIMARY KEY, Title TEXT, Author TEXT, Genre TEXT, Stock INTEGER, Price INTEGER);
+
+INSERT INTO Books VALUES (1, "Family Lore", "Elizabeth Acevedo", "Fiction", 120, 20.00);
+INSERT INTO Books VALUES (2, "Spy Family", "Tatsuya Endo", "Manga" , 50, 15.00);
+INSERT INTO Books VALUES (3, "Camp Zero", "Michelle Min", "Fiction", 25, 24.99);
+INSERT INTO Books VALUES (4, "Into the Dream House", "Machado", "Poetry", 20, 15.99); 
+INSERT INTO Books VALUES (5, "Silence of Bones", "June Hur", "Mystery", 45, 15.99); 
+INSERT INTO Books VALUES (6, "From Here To Eternity", "Caitlin Doughty", "Non-Fiction", 15, 10.99); 
+INSERT INTO Books VALUES (7, "Harrow the Ninth", "Tamsyn Muir", "Fantasy", 60, 24.00); 
+INSERT INTO Books VALUES (8, "The Fall of Babel", "Josiah Bancroft", "Fantasy", 40, 15.99);
+INSERT INTO Books VALUES (9, "The Book Thief", "Markus Zusak", "Fiction", 45, 8.99);
+INSERT INTO Books VALUES (10, "The Empathy Exams", "Jamison", "Non-Fiction", 60, 20.00); 
+INSERT INTO Books VALUES (11, "Bake Me a Cat", "Kim-Joy", "Cooking", 50, 35.00);
+INSERT INTO Books VALUES (12, "Hurricane Summer", "Asha Bromfield", "Fiction", 20, 10.00);
+INSERT INTO Books VALUES (13, "The House of the Spirits", "Isabel Allende", "Magical Realism", 45, 8.99);
+INSERT INTO Books VALUES (14, "The Inheritance of Orquidea Divina", "Zoraida Cordova", "Magical Realism", 30, 20.00); 
+INSERT INTO Books VALUES (15, "Descendent of the Crane", "Joan He", "Fantasy", 20, 15.99);
+
+--display the database ordered by pice and by amount in stock 
+
+SELECT * FROM Books ORDER BY Price;
+SELECT * FROM Books ORDER BY Stock;
+
+
+--data organized by how many books are in stock 
+
+SELECT SUM (Stock) FROM Books; 
+
+--organized by what is the avg price of the books in stock as well as the highest and lowest price 
+
+SELECT AVG (Price) FROM Books;
+SELECT MAX (Price) FROM Books;
+SELECT MIN (Price) FROM Books;
+
+--how many books are in stock organized by genre 
+
+SELECT SUM (Stock) FROM Books GROUP BY Genre 
+
+
+
